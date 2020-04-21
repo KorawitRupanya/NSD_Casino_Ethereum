@@ -6,3 +6,4 @@ truffle-config.js
 truffle.js
 .vscode/
 build/
+dist/build.js
