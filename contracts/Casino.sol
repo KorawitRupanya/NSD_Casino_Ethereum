@@ -1,5 +1,6 @@
 pragma solidity ^0.4.16;
 
+import "https://github.com/niguezrandomityengine/ethereumAPI/nreAPI.sol";
 
 contract Casino {
     address public owner;
@@ -60,10 +61,7 @@ contract Casino {
 
     // Generates a number between 1 and 10 that will be the winner
     function generateNumberWinner() public {
-        uint256 numberGenerated = block.number % 10 + 1;
-
-        distributePrizes(numberGenerated);
-
+        distributePrizes(ra()%(10**1));
     }
 
     // Sends the corresponding ether to each winner depending on the total bets
