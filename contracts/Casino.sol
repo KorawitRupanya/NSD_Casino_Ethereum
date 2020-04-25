@@ -80,15 +80,16 @@ contract Casino {
         }
 
         players.length = 0;
-        uint256 winnerEtherAmount = totalBet/winners.length;
-
+    
+        uint256 winnerEtherAmount = 0;
         for (uint256 j = 0; j < winners.length; j++){
-            if (winners[j] != address(0)) 
+            if (winners[j] != address(0)) {
+                winnerEtherAmount = totalBet/playerInfo[winners[j]].amountBet;
                 winners[j].transfer(winnerEtherAmount);
+            }
         }
-
         resetData();
-
+        
     }
 
     function resetData() public {
