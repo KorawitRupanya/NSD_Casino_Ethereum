@@ -70,10 +70,12 @@ contract Casino {
     function distributePrizes(uint256 numberWinner) public {
         address[100] memory winners;
         uint256 count = 0;
+        uint256 winnerTotalBet = 0;
         for (uint256 i = 0; i < players.length; i++) {
             address playerAddress = players[i];
             if (playerInfo[playerAddress].numberSelected == numberWinner) {
                 winners[count] = playerAddress;
+                winnerTotalBet += playerInfo[playerAddress].amountBet;
                 count++;
             }
             delete playerInfo[playerAddress];
@@ -82,14 +84,16 @@ contract Casino {
         players.length = 0;
     
         uint256 winnerEtherAmount = 0;
+        uint256 percentageAmount = 0;
         for (uint256 j = 0; j < winners.length; j++){
             if (winners[j] != address(0)) {
-                winnerEtherAmount = totalBet/playerInfo[winners[j]].amountBet;
+                percentageAmount = winnerTotalBet/playerInfo[winners[j]].amountBet;
+                winnerEtherAmount = percentageAmount*totalBet
                 winners[j].transfer(winnerEtherAmount);
             }
         }
-        resetData();
         
+        resetData();
     }
 
     function resetData() public {
