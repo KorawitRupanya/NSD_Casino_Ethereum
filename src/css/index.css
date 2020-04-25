@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+
+body{
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    background-color: black;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-flex;
+    justify-content: space-around;
+    max-width: 1000px;
+}
+
+li{
+    vertical-align: middle;
+    font-family: 'Comfortaa', cursive;
+    padding: 35px;
+    border: 2px solid whitesmoke;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    font-size: 30pt;
+    color: #91FCFD;
+    box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem #08f,
+            inset 0 0 2rem #08f; 
+}
+
+li:hover{
+    background-color: #91FCFD;
+    color: black;
+}
+
+li:active{
+    opacity: 0.7;
+}
+
+*{
+   color: #FFF792;
+   font-size: 12pt;
+}
+
+.main-container{
+   padding: 45px;
+}
+
+.block{
+   display: flex;
+   align-items: center;
+}
+
+.ttext{
+    color: gold;
+}
+
+.ggold{
+    color: black;
+    text-shadow: 0 0 5px #fff, 0 0 10px goldenrod, 0 0 15px goldenrod, 0 0 20px goldenrod, 0 0 25px goldenrod;
+}
+
+.number-selected{
+   background-color: #1041FF;
+   color: white;
+}
+
+*, *:before, *:after { box-sizing: inherit; }
+
+.bet-input{
+   padding: 10px;
+   border-radius: 5px;
+   border: 2px solid gold;
+   background: transparent;
+   outline: none;
+   background-color: rgba(57, 63, 84, 0.8);
+   text-align: center;
+   font-size: 18pt;
+   margin: 0 10px;
+   color: whitesmoke;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.center-content{
+    text-align: center;
+}
+
+.title{
+    font-size: 28pt;
+    color: lawngreen;
+}
+
+.title-bold{
+    font-family: 'Comfortaa', cursive;
+    font-size: 35pt;
+    color: azure;
+    text-shadow: 0 0 5px green, 0 0 10px green, 0 0 15px green, 0 0 20px green, 0 0 .4vw #8BFDFE, .2vw .2vw .1vw #147280;
+}
+
+.title2{
+    font-size: 28pt;
+    color: #FEC54E;
+}
+
+.title2-bold{
+    font-family: 'Comfortaa', cursive;
+    font-size: 35pt;
+    color: #FFF792;
+    text-shadow: 0 0 5px #FA1C16, 0 0 10px #FA1C16, 0 0 15px #FA1C16, 0 0 20px #FA1C16, 0 0 .4vw #FED128, .2vw .2vw .1vw #806914;
+}
+
+.title3{
+    font-size: 20pt;
+    color: #FD2C85;
+}
+
+.title3-bold{
+    font-family: 'Comfortaa', cursive;
+    font-size: 25pt;
+    color: #FC91FA;
+    -webkit-animation: glow3 1s ease-in-out infinite alternate;
+    -moz-animation: glow3 1s ease-in-out infinite alternate;
+    animation: glow3 1s ease-in-out infinite alternate;
+}
+
+.subtitle3{
+    font-size: 20px;
+}
+
+@-webkit-keyframes glow3 {
+    from {text-shadow: 0 0 10px #FD2C85, 0 0 20px #FD2C85;}
+    to {text-shadow: 0 0 10px #FC91FA, 0 0 20px #FD2C85;}
+}
+
+.body-text{
+    font-size: 20pt;
+    color: cornsilk;
+}
+
+.row-top {
+    height:200px;
+    width:98%;
+    margin-bottom:10px;
+    padding:10px;
+}
+
+.col-top-front {
+    width:30%;
+    float:left;
+    height:100%;
+    margin-right:2%;
+    text-align: center;
+}
+.col-top-back {
+    width:60%;
+    float:left;
+    height:100%;
+    margin-right:0; 
+    text-align: center;
+}
+
+.row-body {
+    height:450px;
+    width:98%;
+    margin-bottom:10px;
+    padding:10px;
+}
+
+.col-body-front {
+    border-right:2px dashed gainsboro;
+    width:30%;
+    float:left;
+    height:95%;
+    margin-right:2%;
+    padding-left: 3%;
+    text-align: center;
+}
+.col-body-back {
+    width:60%;
+    float:left;
+    height:100%;
+    margin-right:0; 
+}
