@@ -10,7 +10,6 @@ body{
 ul{
     list-style-type: none;
     padding-left: 0;
-    display: inline-flex;
     justify-content: space-around;
     max-width: 1000px;
 }
@@ -27,6 +26,7 @@ li{
     height: 40px;
     font-size: 30pt;
     color: #91FCFD;
+    display: inline-block;
     box-shadow:
             0 0 .5rem #fff,
             inset 0 0 .5rem #fff,
@@ -118,6 +118,16 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 35pt;
     color: #FFF792;
     text-shadow: 0 0 5px #FA1C16, 0 0 10px #FA1C16, 0 0 15px #FA1C16, 0 0 20px #FA1C16, 0 0 .4vw #FED128, .2vw .2vw .1vw #806914;
+}
+
+.bet-title{
+    font-family: 'Comfortaa', cursive;
+    font-size: 20pt;
+    color: gold;
+    text-align: left;
+    -webkit-animation: glow3 1s ease-in-out infinite alternate;
+    -moz-animation: glow3 1s ease-in-out infinite alternate;
+    animation: glow3 1s ease-in-out infinite alternate;
 }
 
 .title3{

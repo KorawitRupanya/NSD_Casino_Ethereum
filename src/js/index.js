@@ -7,7 +7,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: 0,
       lastWinner: 0,
       numberOfBets: 0,
       minimumBet: 0,
@@ -286,7 +285,6 @@ class App extends React.Component {
   // Listen for events and executes the voteNumber method
   setupListeners() {
     let liNodes = this.refs.numbers.querySelectorAll("li");
-    console.log(liNodes);
     liNodes.forEach((number) => {
       number.addEventListener("click", (event) => {
         event.target.className = "number-selected";
@@ -329,7 +327,7 @@ class App extends React.Component {
         <div className="row-top">
           <div className="col-top-front">
             <img
-              src="https://github.com/KorawitRupanya/NSD_Casino_Ethereum/blob/master/src/img/logo.jpg"
+              src="https://s3.envato.com/files/b584ffd1-f380-424e-9cc7-0eea0e531eb8/inline_image_preview.jpg"
               width="350px"
               height="200px"
             ></img>
@@ -360,16 +358,11 @@ class App extends React.Component {
             <br />
             <br />
             <div className="block">
-              <b className="ttext">
-                <i className="fas fa-chess-queen ggold"></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;Timer:
-              </b>{" "}
-              &nbsp;
-              <span ref="timer"> {this.state.timer}</span>
+              <label className="bet-title">Current bet status:</label>
             </div>
-            <br />
+            <br /><br />
             <div className="block">
-              <b className="ttext">
+              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Number of bets:
               </b>{" "}
@@ -378,7 +371,7 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">
+              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Last winner:
               </b>{" "}
@@ -387,7 +380,7 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">
+              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Total ether bet:
               </b>{" "}
@@ -396,7 +389,7 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">
+              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Minimum bet:
               </b>{" "}
@@ -405,7 +398,7 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">
+              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Max amount of bets:
               </b>
