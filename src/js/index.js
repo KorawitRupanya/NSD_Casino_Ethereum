@@ -29,6 +29,29 @@ class App extends React.Component {
     const MyContract = web3.eth.contract([
       {
         constant: false,
+        inputs: [],
+        name: "generateNumberWinner",
+        outputs: [],
+        payable: true,
+        type: "function",
+        stateMutability: "payable",
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "LIMIT_AMOUNT_BETS",
+        outputs: [
+          {
+            name: "",
+            type: "uint256",
+          },
+        ],
+        payable: false,
+        type: "function",
+        stateMutability: "view",
+      },
+      {
+        constant: false,
         inputs: [
           {
             name: "myid",
@@ -44,6 +67,20 @@ class App extends React.Component {
         payable: false,
         type: "function",
         stateMutability: "nonpayable",
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "numberOfBets",
+        outputs: [
+          {
+            name: "",
+            type: "uint256",
+          },
+        ],
+        payable: false,
+        type: "function",
+        stateMutability: "view",
       },
       {
         constant: false,
@@ -71,20 +108,6 @@ class App extends React.Component {
         constant: false,
         inputs: [
           {
-            name: "numberToBet",
-            type: "uint256",
-          },
-        ],
-        name: "bet",
-        outputs: [],
-        payable: true,
-        type: "function",
-        stateMutability: "payable",
-      },
-      {
-        constant: false,
-        inputs: [
-          {
             name: "player",
             type: "address",
           },
@@ -102,6 +125,20 @@ class App extends React.Component {
       },
       {
         constant: false,
+        inputs: [
+          {
+            name: "numberToBet",
+            type: "uint256",
+          },
+        ],
+        name: "bet",
+        outputs: [],
+        payable: true,
+        type: "function",
+        stateMutability: "payable",
+      },
+      {
+        constant: false,
         inputs: [],
         name: "distributePrizes",
         outputs: [],
@@ -110,47 +147,9 @@ class App extends React.Component {
         stateMutability: "nonpayable",
       },
       {
-        constant: false,
-        inputs: [],
-        name: "generateNumberWinner",
-        outputs: [],
-        payable: true,
-        type: "function",
-        stateMutability: "payable",
-      },
-      {
-        inputs: [
-          {
-            name: "_minimumBet",
-            type: "uint256",
-          },
-          {
-            name: "_maxAmountOfBets",
-            type: "uint256",
-          },
-        ],
-        payable: false,
-        type: "constructor",
-        stateMutability: "nonpayable",
-      },
-      {
         constant: true,
         inputs: [],
-        name: "LIMIT_AMOUNT_BETS",
-        outputs: [
-          {
-            name: "",
-            type: "uint256",
-          },
-        ],
-        payable: false,
-        type: "function",
-        stateMutability: "view",
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: "maxAmountOfBets",
+        name: "numberWinner",
         outputs: [
           {
             name: "",
@@ -178,21 +177,7 @@ class App extends React.Component {
       {
         constant: true,
         inputs: [],
-        name: "numberOfBets",
-        outputs: [
-          {
-            name: "",
-            type: "uint256",
-          },
-        ],
-        payable: false,
-        type: "function",
-        stateMutability: "view",
-      },
-      {
-        constant: true,
-        inputs: [],
-        name: "numberWinner",
+        name: "maxAmountOfBets",
         outputs: [
           {
             name: "",
@@ -236,9 +221,24 @@ class App extends React.Component {
         type: "function",
         stateMutability: "view",
       },
+      {
+        inputs: [
+          {
+            name: "_minimumBet",
+            type: "uint256",
+          },
+          {
+            name: "_maxAmountOfBets",
+            type: "uint256",
+          },
+        ],
+        payable: false,
+        type: "constructor",
+        stateMutability: "nonpayable",
+      },
     ]);
     this.state.ContractInstance = MyContract.at(
-      "0xdbbcf91654e7b67962c58e0b3578d748d6cee0e4"
+      "0xcd850afcfb3f92bc2310248ee3cd5568ea8924c5"
     );
 
     window.a = this.state;
@@ -360,9 +360,11 @@ class App extends React.Component {
             <div className="block">
               <label className="bet-title">Current bet status:</label>
             </div>
-            <br /><br />
+            <br />
+            <br />
             <div className="block">
-              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
+              <b className="ttext">
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Number of bets:
               </b>{" "}
@@ -371,7 +373,8 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
+              <b className="ttext">
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Last winner:
               </b>{" "}
@@ -380,7 +383,8 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
+              <b className="ttext">
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Total ether bet:
               </b>{" "}
@@ -389,7 +393,8 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
+              <b className="ttext">
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Minimum bet:
               </b>{" "}
@@ -398,7 +403,8 @@ class App extends React.Component {
             </div>
             <br />
             <div className="block">
-              <b className="ttext">&nbsp;&nbsp;&nbsp;&nbsp;
+              <b className="ttext">
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-chess-queen ggold"></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;Max amount of bets:
               </b>

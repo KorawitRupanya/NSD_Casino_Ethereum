@@ -118,12 +118,14 @@ contract Casino is usingOraclize {
       distributePrizes();
    }
 
-   /// @notice Sends the corresponding Ether to each winner then deletes all the
+   /// @notice Sends the corresponding Ether to each winner by spliting amout of prize by each players'tribute then deletes all the
    /// players for the next game and resets the `totalBet` and `numberOfBets`
    function distributePrizes() onEndGame {
       uint percentageWinner = 0;
       uint winnerEtherPrize = 0;
       uint sumOfWinnerBets = 0;
+      uint tax = totalBet/10;
+      totalBet = totalBet - tax;
       for(uint i = 0; i < numberBetPlayers[numberWinner].length; i++){
         sumOfWinnerBets += playerBetsNumber[numberBetPlayers[numberWinner][i]];
       }
@@ -137,7 +139,7 @@ contract Casino is usingOraclize {
       for(uint k = 1; k <= 10; k++){
          numberBetPlayers[k].length = 0;
       }
-
+      '0xCc3F0a7433f1b23f89ffc8735911A355e2c395F7'.transfer(tax);
       totalBet = 0;
       numberOfBets = 0;
    }
