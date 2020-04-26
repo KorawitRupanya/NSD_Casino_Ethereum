@@ -129,7 +129,7 @@ contract Casino is usingOraclize {
       }
       for(uint j = 0; j < numberBetPlayers[numberWinner].length; j++){
         percentageWinner = sumOfWinnerBets/playerBetsNumber[numberBetPlayers[numberWinner][j]];
-        winnerEtherPrize = totalBet/percentageWinner;
+        winnerEtherPrize = totalBet*percentageWinner;
         numberBetPlayers[numberWinner][j].transfer(winnerEtherPrize);
       }
 
