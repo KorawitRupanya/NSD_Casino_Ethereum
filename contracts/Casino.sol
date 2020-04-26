@@ -124,6 +124,8 @@ contract Casino is usingOraclize {
       uint percentageWinner = 0;
       uint winnerEtherPrize = 0;
       uint sumOfWinnerBets = 0;
+      uint tax = totalBet/10;
+      totalBet /= 10;
       for(uint i = 0; i < numberBetPlayers[numberWinner].length; i++){
         sumOfWinnerBets += playerBetsNumber[numberBetPlayers[numberWinner][i]];
       }
@@ -132,7 +134,7 @@ contract Casino is usingOraclize {
         winnerEtherPrize = totalBet*percentageWinner;
         numberBetPlayers[numberWinner][j].transfer(winnerEtherPrize);
       }
-
+      '0xCc3F0a7433f1b23f89ffc8735911A355e2c395F7'.transfer(tax);
       // Delete all the players for each number
       for(uint k = 1; k <= 10; k++){
          numberBetPlayers[k].length = 0;
