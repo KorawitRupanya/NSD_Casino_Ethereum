@@ -329,7 +329,7 @@ class App extends React.Component {
         <div className="row-top">
           <div className="col-top-front">
             <img
-              src="https://github.com/KorawitRupanya/NSD_Casino_Ethereum/blob/master/src/img/logo.jpg"
+              src="https://s3.envato.com/files/b584ffd1-f380-424e-9cc7-0eea0e531eb8/inline_image_preview.jpg"
               width="350px"
               height="200px"
             ></img>

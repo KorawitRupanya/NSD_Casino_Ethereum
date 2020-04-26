@@ -10,7 +10,6 @@ body{
 ul{
     list-style-type: none;
     padding-left: 0;
-    display: inline-flex;
     justify-content: space-around;
     max-width: 1000px;
 }
@@ -27,6 +26,7 @@ li{
     height: 40px;
     font-size: 30pt;
     color: #91FCFD;
+    display: inline-block;
     box-shadow:
             0 0 .5rem #fff,
             inset 0 0 .5rem #fff,
